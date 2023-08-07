@@ -8,6 +8,8 @@ public class gameManager : MonoBehaviour
 {
     public Text timeTxt;
     float time = 30.0f;
+    int trytime = 0;
+    public GameObject EndCanvas;
 
     public GameObject card;
     public GameObject endTxt;
@@ -59,7 +61,8 @@ public class gameManager : MonoBehaviour
     {
         string firstCardImage = firstCard.transform.Find("front").GetComponent<SpriteRenderer>().sprite.name;
         string secondCardImage = secondCard.transform.Find("front").GetComponent<SpriteRenderer>().sprite.name;
-        
+        trytime += 1;
+
         if (firstCardImage == secondCardImage)
         {
             audioSource.PlayOneShot(match);
