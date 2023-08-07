@@ -154,7 +154,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeTxt: {fileID: 1821403764}
-  EndCanvas: {fileID: 0}
+  EndCanvas: {fileID: 1394851038}
+  Trytime: {fileID: 825596310}
   card: {fileID: 5196151395950838111, guid: 98dc98fd9f23b874283814008a6f07f2, type: 3}
   endTxt: {fileID: 159854298}
   firstCard: {fileID: 0}
@@ -290,7 +291,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &159854299
 RectTransform:
   m_ObjectHideFlags: 0
@@ -687,7 +688,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &824301038
 RectTransform:
   m_ObjectHideFlags: 0
@@ -766,7 +767,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &825596309
 RectTransform:
   m_ObjectHideFlags: 0
@@ -846,7 +847,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1394851039
 RectTransform:
   m_ObjectHideFlags: 0
