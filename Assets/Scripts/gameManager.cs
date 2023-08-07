@@ -8,6 +8,9 @@ public class gameManager : MonoBehaviour
 {
     public Text timeTxt;
     float time = 30.0f;
+    int trycount = 0;
+    public GameObject EndCanvas;
+    public Text Trytime;
 
     public GameObject card;
     public GameObject endTxt;
@@ -41,6 +44,8 @@ public class gameManager : MonoBehaviour
 
     void Update()
     {
+        Trytime.text = trycount.ToString();
+        Debug.Log(trycount);
         time -= Time.deltaTime;
         timeTxt.text = time.ToString("N2");
 
@@ -51,7 +56,7 @@ public class gameManager : MonoBehaviour
         
         if (time < 0)
         {
-            endTxt.SetActive(true);
+            EndCanvas.SetActive(true);
             Time.timeScale = 0.0f;
         }
     }
@@ -65,7 +70,10 @@ public class gameManager : MonoBehaviour
     {
         string firstCardImage = firstCard.transform.Find("front").GetComponent<SpriteRenderer>().sprite.name;
         string secondCardImage = secondCard.transform.Find("front").GetComponent<SpriteRenderer>().sprite.name;
-        
+        trycount += 1;
+        Trytime.text = trycount.ToString();
+        Debug.Log(trycount);
+
         if (firstCardImage == secondCardImage)
         {
             audioSource.PlayOneShot(match);
@@ -73,10 +81,9 @@ public class gameManager : MonoBehaviour
             secondCard.GetComponent<card>().destroyCard();
 
             int cardsLeft = GameObject.Find("cards").transform.childCount;
-            Debug.Log(cardsLeft);
             if (cardsLeft == 2)
             {
-                endTxt.SetActive(true);
+                EndCanvas.SetActive(true);
                 Time.timeScale = 0.0f;
             }
         }
