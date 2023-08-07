@@ -11,7 +11,7 @@ public class gameManager : MonoBehaviour
     int trycount = 0;
     public GameObject EndCanvas;
     public Text Trytime;
-
+    public GameObject failTxt;
     public GameObject card;
     public GameObject endTxt;
     public GameObject firstCard;
@@ -92,10 +92,19 @@ public class gameManager : MonoBehaviour
         {
             firstCard.GetComponent<card>().closeCard();
             secondCard.GetComponent<card>().closeCard();
-
+            Invoke("fail", 0.0f);
             time -= 2.0f;
         }
         firstCard = null;
         secondCard = null;
+        Invoke("failafter", 0.5f);
+    }
+    void fail()
+    {
+        failTxt.SetActive(true);
+    }
+    void failafter()
+    {
+        failTxt.SetActive(false);
     }
 }
