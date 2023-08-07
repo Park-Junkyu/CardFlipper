@@ -44,7 +44,7 @@ public class gameManager : MonoBehaviour
 
     void Update()
     {
-        Trytime.text = trycount.ToString();
+        Trytime.text = "시도횟수: " + trycount.ToString();
         Debug.Log(trycount);
         time -= Time.deltaTime;
         timeTxt.text = time.ToString("N2");
@@ -57,6 +57,7 @@ public class gameManager : MonoBehaviour
         if (time < 0)
         {
             EndCanvas.SetActive(true);
+            EndCanvas.transform.Find("TryTimeTxt").gameObject.SetActive(true);
             Time.timeScale = 0.0f;
         }
     }
@@ -73,7 +74,7 @@ public class gameManager : MonoBehaviour
         trycount += 1;
         Trytime.text = trycount.ToString();
         Debug.Log(trycount);
-
+        
         if (firstCardImage == secondCardImage)
         {
             audioSource.PlayOneShot(match);
@@ -91,6 +92,8 @@ public class gameManager : MonoBehaviour
         {
             firstCard.GetComponent<card>().closeCard();
             secondCard.GetComponent<card>().closeCard();
+
+            time -= 2.0f;
         }
         firstCard = null;
         secondCard = null;
